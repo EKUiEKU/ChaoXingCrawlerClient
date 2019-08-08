@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXListView?>
+<?import com.jfoenix.controls.JFXPasswordField?>
+<?import com.jfoenix.controls.JFXRadioButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
+<?import com.jfoenix.controls.JFXTextField?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.MenuItem?>
+<?import javafx.scene.control.SplitMenuButton?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<?import javafx.scene.Group?>
+<BorderPane xmlns="http://javafx.com/javafx/8.0.999-ea" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.acong.chaoxingcrawl.ui.controller.ShuakeController">
+
+    <top>
+        <HBox spacing="5" style="-fx-background-color: linear-gradient(to right,#888888,#2B2B2B);-fx-padding: 10 10 10 10">
+            <Text text="单位/学校:" textAlignment="CENTER" />
+            <JFXTextField fx:id="tf_unit" text="莆田学院" />
+
+            <Text text="学号:" textAlignment="CENTER" />
+            <JFXTextField fx:id="tf_username" text="201811404537" />
+
+            <Text text="密码:" />
+            <JFXPasswordField fx:id="tf_password" text="xixijir2018" />
+
+            <Text text="课程名称:" />
+            <JFXTextField fx:id="tf_course" text="轻轻松松学药理" />
+
+            <JFXButton fx:id="btn_login" buttonType="RAISED" style="-fx-background-color: #eeeeee" text="开始刷课" />
+        </HBox>
+    </top>
+
+    <center>
+        <GridPane style="-fx-padding: 10 10 10 10">
+            <Text text="功能" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+
+            <JFXRadioButton text="静音播放" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-padding: 5 5 5 5" selected="true" disable="true"/>
+
+            <Label text="倍速播放" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-padding: 5 5 5 5"/>
+            <Group GridPane.columnIndex="1" GridPane.rowIndex="2">
+                <HBox spacing="5">
+                    <JFXRadioButton text="1倍" disable="true"/>
+                    <JFXRadioButton text="2倍" disable="true"/>
+                    <JFXRadioButton text="5倍" disable="true" selected="true"/>
+                    <JFXRadioButton text="12倍" disable="true"/>
+                </HBox>
+            </Group>
+
+            <Text text="监控" GridPane.columnIndex="0" GridPane.rowIndex="3" />
+
+            <HBox spacing="5" style="-fx-padding: 5 5 5 5" GridPane.rowIndex="4" GridPane.columnIndex="0">
+                <Text text="课程名称:"/>
+                <Text fx:id="text_course" fill="red" text="-"/>
+
+                <Text text="   总学时:"/>
+                <Text fx:id="text_totalTime" fill="red" text="-"/>
+
+                <Text text="   进度:"/>
+                <Text fx:id="text_course_progress" fill="red" text="-/-(-%)"/>
+            </HBox>
+
+            <HBox spacing="5" style="-fx-padding: 5 5 5 5" GridPane.rowIndex="5" GridPane.columnIndex="0">
+                <Text text="当前正在上课:"/>
+                <Text fx:id="text_class_name" fill="red" text="-"/>
+
+            </HBox>
+
+            <HBox spacing="5" style="-fx-padding: 5 5 5 5" GridPane.rowIndex="6" GridPane.columnIndex="0">
+                <Text text="当前播放:"/>
+                <Text fx:id="text_type" fill="red" text="-"/>
+
+                <Text text="   进度:"/>
+                <Text fx:id="text_class_progress" fill="red" text="-/-(-%)"/>
+            </HBox>
+        </GridPane>
+    </center>
+
+
+    <right>
+        <VBox style="-fx-padding: 5 5 5 5">
+            <Text text="课堂章节" textAlignment="CENTER" wrappingWidth="99.0" />
+
+            <JFXListView fx:id="lv_clazz" maxWidth="200" minWidth="200">
+
+            </JFXListView>
+        </VBox>
+    </right>
+
+    <bottom>
+        <JFXTextArea fx:id="ta_console" prefHeight="150" style="-fx-background-color: #2B2B2B;-fx-text-fill: #BBBBBB">
+            
+        </JFXTextArea>
+    </bottom>
+</BorderPane>
