@@ -4,6 +4,7 @@ import com.acong.chaoxingcrawl.ChaoXingTaskExecutor;
 import com.acong.chaoxingcrawl.bean.*;
 import com.acong.chaoxingcrawl.mq.Looper;
 import com.acong.chaoxingcrawl.taskes.WatchChaoXingTask;
+import com.acong.chaoxingcrawl.utils.PropertiesUtil;
 import com.acong.chaoxingcrawl.utils.UserUtil;
 import com.acong.chaoxingcrawl.utils.interfaces.OnUploadClassesListener;
 import com.jfoenix.controls.*;
@@ -19,6 +20,7 @@ import com.acong.chaoxingcrawl.bean.Class;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Properties;
 import java.util.ResourceBundle;
 
 public class ShuakeController implements Initializable, EventHandler<ActionEvent>, ChaoXingTaskExecutor.OnMessageQueueListener, UserUtil.OnUploadInfoListener, OnUploadClassesListener {
@@ -99,8 +101,16 @@ public class ShuakeController implements Initializable, EventHandler<ActionEvent
     public void initialize(URL location, ResourceBundle resources) {
         btn_login.setOnAction(this);
 
-
-
+        /**
+         * 加载相关信息
+         */
+        Properties p = new PropertiesUtil().getProperties();
+        if (p != null){
+            tf_unit.setText(p.getProperty("unit"));
+            tf_course.setText(p.getProperty("course"));
+            tf_username.setText(p.getProperty("chaoxing.username"));
+            tf_password.setText(p.getProperty("chaoxing.password"));
+        }
     }
 
     public void onMessage(String msg) {
@@ -148,6 +158,15 @@ public class ShuakeController implements Initializable, EventHandler<ActionEvent
                 .uploadInfo(info,this);
 
         classes = new ArrayList<Class>();
+
+        /**
+         * 在本地保存相关信息
+         */
+        PropertiesUtil util = new PropertiesUtil();
+        util.writeProperty("unit",tf_unit.getText());
+        util.writeProperty("course",tf_course.getText());
+        util.writeProperty("chaoxing.username",tf_username.getText());
+        util.writeProperty("chaoxing.password",tf_password.getText());
     }
 
     public void onCourseName(String courseName) {

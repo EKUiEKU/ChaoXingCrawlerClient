@@ -1,5 +1,6 @@
 package com.acong.chaoxingcrawl.ui.controller;
 
+import com.acong.chaoxingcrawl.utils.PropertiesUtil;
 import com.acong.chaoxingcrawl.utils.UserUtil;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
@@ -19,6 +20,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 import java.net.URL;
+import java.util.Properties;
 import java.util.ResourceBundle;
 
 public class LoginController implements Initializable, EventHandler<ActionEvent> , UserUtil.OnLoginListener {
@@ -39,6 +41,25 @@ public class LoginController implements Initializable, EventHandler<ActionEvent>
     public void initialize(URL location, ResourceBundle resources) {
         btn_login.setOnAction(this);
         hyp_register.setOnAction(this);
+
+        /**
+         * 加载储存的账号和密码
+         */
+        PropertiesUtil util = new PropertiesUtil();
+        Properties properties = util.getProperties();
+        if (properties != null){
+            String rememberMe = properties.getProperty("rememberMe");
+
+            if (rememberMe.equals("true")){
+                cb_rememberMe.setSelected(true);
+                //读取账号和密码
+                String username = properties.getProperty("username");
+                String password = properties.getProperty("password");
+
+                tf_username.setText(username);
+                tf_password.setText(password);
+            }
+        }
     }
 
     public void handle(ActionEvent event) {
@@ -114,6 +135,16 @@ public class LoginController implements Initializable, EventHandler<ActionEvent>
 
     public void onLoginSuccess(Long uid) {
         loadShuake(uid);
+
+        /**
+         * 保存账号和密码
+         */
+        if (cb_rememberMe.isSelected() == true){
+            PropertiesUtil util = new PropertiesUtil();
+            util.writeProperty("username",tf_username.getText().trim());
+            util.writeProperty("password",tf_password.getText().trim());
+            util.writeProperty("rememberMe","true");
+        }
     }
 
     public void onLoginFailure(String causeBy) {
