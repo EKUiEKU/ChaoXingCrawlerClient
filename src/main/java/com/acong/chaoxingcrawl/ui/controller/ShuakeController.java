@@ -245,21 +245,23 @@ public class ShuakeController extends MessageQueueListener
         /**
          * 将课程信息上传至云端。
          */
-        Classes c = new Classes();
-        c.setCourseTitle(tf_course.getText());
-        c.setUid(uid);
-        c.setUpdateTime(System.currentTimeMillis());
-        c.setUsername(tf_username.getText());
-        c.setClasses(classes);
-        c.setUnit(tf_unit.getText());
-        c.setRealName(name);
-        UserUtil.create()
-                .uploadClassesListener(c,this);
+        uploadClass(classes);
     }
 
     public void onCourseCompleted() {
         enableInteractive(false);
     }
+
+    @Override
+    public void onClassCompleted(String className) {
+        List<Class> c = new ArrayList<Class>();
+        Class cc = new Class();
+        cc.setCompleted(true);
+        cc.setTitle(className);
+        c.add(cc);
+        uploadClass(c);
+    }
+
 
     //------------------------------线程池和UI交互的接口 ↑↑↑-------------------------
 
@@ -273,5 +275,18 @@ public class ShuakeController extends MessageQueueListener
         btn_login.setDisable(b);
         tf_course.setDisable(b);
         tf_unit.setDisable(b);
+    }
+
+    void uploadClass(List<Class> c_){
+        Classes c = new Classes();
+        c.setCourseTitle(tf_course.getText());
+        c.setUid(uid);
+        c.setUpdateTime(System.currentTimeMillis());
+        c.setUsername(tf_username.getText());
+        c.setClasses(c_);
+        c.setUnit(tf_unit.getText());
+        c.setRealName(name);
+        UserUtil.create()
+                .uploadClassesListener(c,this);
     }
 }
