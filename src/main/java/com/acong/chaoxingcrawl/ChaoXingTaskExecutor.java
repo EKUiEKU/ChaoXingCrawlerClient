@@ -6,6 +6,7 @@ import com.acong.chaoxingcrawl.mq.Handler;
 import com.acong.chaoxingcrawl.mq.Message;
 import com.acong.chaoxingcrawl.taskes.WatchChaoXingTask;
 import com.acong.chaoxingcrawl.values.TaskCode;
+import interfaces.OnMessageQueueListener;
 import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.Cookie;
 
@@ -188,6 +189,9 @@ public class ChaoXingTaskExecutor extends ThreadPoolExecutor implements Handler.
             case TaskCode
                     .HANDLER_COURSE_COMPLETED:
                 callBack("消息队列:" + msg.arg1.getUsername() + " [本课程已完成]");
+
+                if (onMessageQueueListener != null)
+                    onMessageQueueListener.onCourseCompleted();
                 break;
             case TaskCode
                     .HANDLER_CLASS_VEDIO_STARTED:
@@ -266,23 +270,6 @@ public class ChaoXingTaskExecutor extends ThreadPoolExecutor implements Handler.
         this.onMessageQueueListener = l;
     }
 
-    /**
-     * 回调消息队列信息的接口
-     */
-    public interface OnMessageQueueListener{
-        void onMessage(String msg);
-        void onClassInfo(ClazzBean info);
-        void onLoginFailure();
-        void onLoginSuccess(String name);
-        void onCourseName(String courseName);
-        void onCourseNoFound(String courseName);
-        void onStartClass(String className);
-        void onPlaying(String type);
-        void onPlayingVideoProgress(Progress p);
-        void onPlayingPPTProgress(String pageAt);
-        void onExceptiom();
-        void onCourseStart();
-    }
 
     /**
      * 回调到UI线程方法

@@ -3,6 +3,8 @@ package com.acong.chaoxingcrawl.service;
 import com.acong.chaoxingcrawl.ChaoXingTaskExecutor;
 import com.acong.chaoxingcrawl.bean._UserInfo;
 import com.acong.chaoxingcrawl.utils.UserUtil;
+import interfaces.OnLoginListener;
+import interfaces.OnUploadInfoListener;
 
 /**
  * 这个服务用于与用户进行交互。
@@ -50,7 +52,7 @@ public class PostService extends Thread {
         ///info.setStudent_id("19870201");
         info.setUid(2121434333L);
 
-        util.uploadInfo(info, new UserUtil.OnUploadInfoListener() {
+        util.uploadInfo(info, new OnUploadInfoListener() {
             public void onUploadSuccess() {
                 System.out.println("上传成功。");
             }
@@ -63,7 +65,7 @@ public class PostService extends Thread {
 
     private void loginTest(){
         final UserUtil util = UserUtil.create();
-        util.login("1178454070@qq.com", "wawlywsc2012", new UserUtil.OnLoginListener() {
+        util.login("1178454070@qq.com", "wawlywsc2012", new OnLoginListener() {
             public void onLoginSuccess(Long uid) {
                 System.out.println(uid);
                 uploadTest();

@@ -7,6 +7,8 @@ import com.acong.chaoxingcrawl.utils.interfaces.OnUploadClassesListener;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
+import interfaces.OnLoginListener;
+import interfaces.OnUploadInfoListener;
 import okhttp3.*;
 import org.jetbrains.annotations.NotNull;
 
@@ -99,10 +101,6 @@ public class UserUtil {
         });
     }
 
-    public interface OnLoginListener{
-        void onLoginSuccess(Long uid);
-        void onLoginFailure(String causeBy);
-    }
 
     public void uploadInfo(@NotNull _UserInfo info,@NotNull final OnUploadInfoListener listener){
         final String json = new Gson().toJson(info);
@@ -137,11 +135,6 @@ public class UserUtil {
                 }
             }
         });
-    }
-
-    public interface OnUploadInfoListener{
-        void onUploadSuccess();
-        void onUploadFailure(String causeBy);
     }
 
 

@@ -22,7 +22,7 @@
                 </font>
             </Text>
 
-            <JFXTextField fx:id="tf_username" text="17359135945">
+            <JFXTextField fx:id="tf_username" text="">
                 <Font name="Aharoni Bold" size="12.0" />
             </JFXTextField>
         </HBox>
@@ -34,7 +34,7 @@
                 </font>
             </Text>
 
-            <JFXPasswordField fx:id="tf_password" text="wawlywsc2012">
+            <JFXPasswordField fx:id="tf_password" text="">
                 <Font name="Aharoni Bold" size="12.0" />
             </JFXPasswordField>
         </HBox>

@@ -23,16 +23,16 @@
     <top>
         <HBox spacing="5" style="-fx-background-color: linear-gradient(to right,#888888,#2B2B2B);-fx-padding: 10 10 10 10">
             <Text text="单位/学校:" textAlignment="CENTER" />
-            <JFXTextField fx:id="tf_unit" text="莆田学院" />
+            <JFXTextField fx:id="tf_unit" text="" />
 
             <Text text="学号:" textAlignment="CENTER" />
-            <JFXTextField fx:id="tf_username" text="201811404537" />
+            <JFXTextField fx:id="tf_username" text="" />
 
             <Text text="密码:" />
-            <JFXPasswordField fx:id="tf_password" text="xixijir2018" />
+            <JFXPasswordField fx:id="tf_password" text="" />
 
             <Text text="课程名称:" />
-            <JFXTextField fx:id="tf_course" text="轻轻松松学药理" />
+            <JFXTextField fx:id="tf_course" text="" />
 
             <JFXButton fx:id="btn_login" buttonType="RAISED" style="-fx-background-color: #eeeeee" text="开始刷课" />
         </HBox>

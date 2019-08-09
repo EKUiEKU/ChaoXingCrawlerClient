@@ -8,6 +8,7 @@ public class Classes {
     public long updateTime;
     public String username;
     public String unit;
+    public String realName;
 
 
     public String getUnit() {
@@ -62,4 +63,11 @@ public class Classes {
         this.classes = classes;
     }
 
+    public String getRealName() {
+        return realName;
+    }
+
+    public void setRealName(String realName) {
+        this.realName = realName;
+    }
 }
