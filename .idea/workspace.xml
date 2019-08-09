@@ -6,26 +6,35 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51cfeb21-41c2-4be6-8aee-f1f07bb62d3f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/ChaoXingCrawlerClient.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/utils/PropertiesUtil.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/resources/config.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/PropertiesUtil.class" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/target/classes/config.properties" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+    <list default="true" id="51cfeb21-41c2-4be6-8aee-f1f07bb62d3f" name="Default Changelist" comment="新增了用户信息保存本地的功能">
+      <change afterPath="$PROJECT_DIR$/src/main/java/interfaces/OnLoginListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/interfaces/OnMessageQueueListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/interfaces/OnUploadInfoListener.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/interfaces/impl/MessageQueueListener.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ChaoXingTaskExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ChaoXingTaskExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/bean/Classes.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/bean/Classes.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/service/PostService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ui/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ui/controller/LoginController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ui/controller/ShuakeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ui/controller/ShuakeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/shuake.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/shuake.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/utils/UserUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/utils/UserUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ChaoXingTaskExecutor$OnMessageQueueListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ChaoXingTaskExecutor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ChaoXingTaskExecutor.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/service/PostService$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/service/PostService$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/service/PostService$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/service/PostService$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/service/PostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/service/PostService.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/LoginController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/LoginController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/LoginController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/LoginController$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/LoginController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/ShuakeController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/ShuakeController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/ShuakeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/ShuakeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/login.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/login.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/fxml/shuake.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/shuake.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/UserUtil$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/UserUtil$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/UserUtil$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/UserUtil$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/UserUtil$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/UserUtil$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/UserUtil$4.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/UserUtil$4.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/UserUtil$OnLoginListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/UserUtil$OnUploadInfoListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/UserUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/UserUtil.class" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <ignored path="$PROJECT_DIR$/target/" />
@@ -61,12 +70,89 @@
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ui/controller/ShuakeController.java">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/utils/UserUtil.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13">
-              <caret line="100" column="40" lean-forward="true" selection-start-line="100" selection-start-column="40" selection-end-line="100" selection-end-column="40" />
+            <state relative-caret-position="511">
+              <caret line="138" column="4" selection-start-line="138" selection-start-column="4" selection-end-line="138" selection-end-column="4" />
               <folding>
                 <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/bean/Classes.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="100">
+              <caret line="4" selection-start-line="4" selection-end-line="4" />
+              <folding>
+                <element signature="e#228#229#0" expanded="true" />
+                <element signature="e#255#256#0" expanded="true" />
+                <element signature="e#295#296#0" expanded="true" />
+                <element signature="e#327#328#0" expanded="true" />
+                <element signature="e#1211#1212#0" expanded="true" />
+                <element signature="e#1242#1243#0" expanded="true" />
+                <element signature="e#1290#1291#0" expanded="true" />
+                <element signature="e#1330#1331#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ui/controller/ShuakeController.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-12">
+              <caret line="246" column="11" lean-forward="true" selection-start-line="246" selection-start-column="11" selection-end-line="246" selection-end-column="11" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#2595#2969#0" expanded="true" />
+                <element signature="e#2968#2969#0" expanded="true" />
+                <element signature="e#3507#3508#0" expanded="true" />
+                <element signature="e#3556#3557#0" expanded="true" />
+                <element signature="e#4779#4780#0" expanded="true" />
+                <element signature="e#4819#4820#0" expanded="true" />
+                <element signature="e#5301#5302#0" expanded="true" />
+                <element signature="e#5348#5349#0" expanded="true" />
+                <element signature="e#5924#5925#0" expanded="true" />
+                <element signature="e#5964#5965#0" expanded="true" />
+                <element signature="e#5645#5646#0" expanded="true" />
+                <element signature="e#5695#5696#0" expanded="true" />
+                <element signature="e#5737#5738#0" expanded="true" />
+                <element signature="e#5776#5777#0" expanded="true" />
+                <element signature="e#5973#5974#0" expanded="true" />
+                <element signature="e#6040#6041#0" expanded="true" />
+                <element signature="e#6665#6666#0" expanded="true" />
+                <element signature="e#6705#6706#0" expanded="true" />
+                <element signature="e#6887#6888#0" expanded="true" />
+                <element signature="e#6927#6928#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ChaoXingTaskExecutor.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-20">
+              <caret line="253" column="31" selection-start-line="253" selection-start-column="31" selection-end-line="253" selection-end-column="31" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/service/PostService.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1575">
+              <caret line="67" column="64" selection-start-line="67" selection-start-column="64" selection-end-line="67" selection-end-column="64" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <element signature="e#1706#1707#0" expanded="true" />
+                <element signature="e#1837#1838#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -77,8 +163,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
-        <option value="Interface" />
         <option value="Arquillian JUnit Test Class" />
+        <option value="Interface" />
         <option value="Class" />
       </list>
     </option>
@@ -99,6 +185,7 @@
       <find>toString</find>
       <find>5</find>
       <find>COURSE</find>
+      <find>COURSE_C</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -118,10 +205,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/mq/Log.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/mq/Looper.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/mq/MessageQueue.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/mq/intface/Delayed.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/utils/ChaoXingUtil.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/utils/ChaoXingTaskExecutor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/mq/Handler.java" />
@@ -151,24 +234,28 @@
         <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/bean/UnitBean.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/taskes/base/SeleniumBaseTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/bean/_UserInfo.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/service/PostService.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/bean/UserInfos.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/taskes/WatchChaoXingTask.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ChaoXingTaskExecutor.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/utils/interfaces/OnUploadClassesListener.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/bean/ClassesInfo.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/bean/Class.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/utils/UserUtil.java" />
-        <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/bean/Classes.java" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/login.fxml" />
         <option value="$PROJECT_DIR$/src/main/resources/fxml/shuake.fxml" />
         <option value="$PROJECT_DIR$/pom.xml" />
         <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/Crawler.java" />
         <option value="$PROJECT_DIR$/src/main/resources/config.properties" />
-        <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ui/controller/LoginController.java" />
         <option value="$PROJECT_DIR$/src/test/java/UserUtilTest.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/utils/PropertiesUtil.java" />
+        <option value="$PROJECT_DIR$/src/main/java/interfaces/OnMessageQueueListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/interfaces/impl/MessageQueueListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/interfaces/OnLoginListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/interfaces/OnUploadInfoListener.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ui/controller/LoginController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/service/PostService.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ChaoXingTaskExecutor.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/bean/Classes.java" />
         <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ui/controller/ShuakeController.java" />
+        <option value="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/utils/UserUtil.java" />
       </list>
     </option>
   </component>
@@ -223,7 +310,7 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="chaoxingcrawl" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
+              <item name="bean" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ChaoXingCrawlerClient" type="b2602c69:ProjectViewProjectNode" />
@@ -232,8 +319,15 @@
               <item name="main" type="462c0819:PsiDirectoryNode" />
               <item name="java" type="462c0819:PsiDirectoryNode" />
               <item name="chaoxingcrawl" type="462c0819:PsiDirectoryNode" />
-              <item name="ui" type="462c0819:PsiDirectoryNode" />
-              <item name="controller" type="462c0819:PsiDirectoryNode" />
+              <item name="utils" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="ChaoXingCrawlerClient" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ChaoXingCrawlerClient" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="main" type="462c0819:PsiDirectoryNode" />
+              <item name="java" type="462c0819:PsiDirectoryNode" />
+              <item name="interfaces" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="ChaoXingCrawlerClient" type="b2602c69:ProjectViewProjectNode" />
@@ -385,6 +479,9 @@
       </list>
     </recent_temporary>
   </component>
+  <component name="StructureViewFactory">
+    <option name="ACTIVE_ACTIONS" value=",SHOW_INTERFACES" />
+  </component>
   <component name="SvnConfiguration">
     <configuration />
   </component>
@@ -437,7 +534,8 @@
       <workItem from="1565281869760" duration="1245000" />
       <workItem from="1565283122355" duration="627000" />
       <workItem from="1565287402083" duration="147000" />
-      <workItem from="1565330492074" duration="5585000" />
+      <workItem from="1565330492074" duration="5795000" />
+      <workItem from="1565341898797" duration="4579000" />
     </task>
     <task id="LOCAL-00001" summary="超星学习通爬虫刷课客户端">
       <created>1565282947002</created>
@@ -453,7 +551,14 @@
       <option name="project" value="LOCAL" />
       <updated>1565283237280</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="新增了用户信息保存本地的功能">
+      <created>1565336194204</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1565336194204</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TestHistory">
@@ -489,7 +594,7 @@
     </history-entry>
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="210089000" />
+    <option name="totallyTimeSpent" value="214878000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -502,9 +607,10 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.4849315" visible="true" weight="0.24054463" />
-      <window_info id="Structure" order="1" sideWeight="0.5150685" side_tool="true" weight="0.24054463" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.47954175" weight="0.21633889" />
+      <window_info id="Structure" order="1" sideWeight="0.5204583" side_tool="true" weight="0.21633889" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -515,12 +621,12 @@
       <window_info anchor="bottom" id="Debug" order="2" weight="0.39869282" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Run" order="5" sideWeight="0.49924356" weight="0.40261865" />
+      <window_info anchor="bottom" id="Run" order="5" sideWeight="0.49924356" weight="0.45499182" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32843137" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3289689" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="10" visible="true" weight="0.32569557" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3251634" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50075644" side_tool="true" weight="0.47058824" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.60720134" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -534,8 +640,8 @@
       <window_info anchor="right" id="Palette&#9;" order="8" />
     </layout>
     <layout-to-restore>
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.4849315" visible="true" weight="0.24054463" />
-      <window_info id="Structure" order="1" sideWeight="0.5150685" side_tool="true" weight="0.24054463" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.47954175" weight="0.21633889" />
+      <window_info id="Structure" order="1" sideWeight="0.5204583" side_tool="true" weight="0.21633889" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
       <window_info id="UI Designer" order="4" />
@@ -546,12 +652,12 @@
       <window_info anchor="bottom" id="Debug" order="2" weight="0.39869282" />
       <window_info anchor="bottom" id="Cvs" order="3" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="4" weight="0.4" />
-      <window_info anchor="bottom" id="Run" order="5" sideWeight="0.49924356" visible="true" weight="0.40261865" />
+      <window_info active="true" anchor="bottom" id="Run" order="5" sideWeight="0.49924356" visible="true" weight="0.45499182" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32843137" />
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" weight="0.3289689" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" weight="0.32569557" />
+      <window_info anchor="bottom" id="Terminal" order="10" weight="0.3251634" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50075644" side_tool="true" weight="0.47058824" />
       <window_info anchor="bottom" id="Messages" order="12" weight="0.60720134" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -610,27 +716,10 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="超星学习通爬虫刷课客户端" />
-    <option name="LAST_COMMIT_MESSAGE" value="超星学习通爬虫刷课客户端" />
+    <MESSAGE value="新增了用户信息保存本地的功能" />
+    <option name="LAST_COMMIT_MESSAGE" value="新增了用户信息保存本地的功能" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/test/com/acong/chaoxingcrawl/utils/UserUtilTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/test/java/com/acong/chaoxingcrawl/utils/UserUtilTest.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/bean/_LoginBean.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="361">
-          <caret line="19" column="5" lean-forward="true" selection-start-line="19" selection-start-column="5" selection-end-line="19" selection-end-column="5" />
-          <folding>
-            <element signature="e#310#311#0" expanded="true" />
-            <element signature="e#336#337#0" expanded="true" />
-            <element signature="e#374#375#0" expanded="true" />
-            <element signature="e#404#405#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$MAVEN_REPOSITORY$/com/squareup/okhttp3/okhttp/4.0.1/okhttp-4.0.1.jar!/okhttp3/RequestBody.class">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="jar://$MAVEN_REPOSITORY$/com/google/code/gson/gson/2.8.5/gson-2.8.5.jar!/com/google/gson/JsonObject.class">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="195">
@@ -865,16 +954,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ChaoXingTaskExecutor.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="512">
-          <caret line="256" column="59" selection-start-line="256" selection-start-column="59" selection-end-line="256" selection-end-column="59" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/utils/interfaces/OnUploadClassesListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="100">
@@ -908,43 +987,10 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/bean/ClassesInfo.java" />
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/service/PostService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="49" column="11" selection-start-line="49" selection-start-column="11" selection-end-line="49" selection-end-column="11" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/bean/Class.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="125">
           <caret line="5" column="29" lean-forward="true" selection-start-line="5" selection-start-column="29" selection-end-line="5" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/utils/UserUtil.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="200">
-          <caret line="22" column="54" selection-start-line="22" selection-start-column="54" selection-end-line="22" selection-end-column="54" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/bean/Classes.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="350">
-          <caret line="16" column="16" selection-start-line="16" selection-start-column="16" selection-end-line="16" selection-end-column="16" />
-          <folding>
-            <element signature="e#228#229#0" expanded="true" />
-            <element signature="e#255#256#0" expanded="true" />
-            <element signature="e#295#296#0" expanded="true" />
-            <element signature="e#327#328#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1005,16 +1051,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ui/controller/LoginController.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="63">
-          <caret line="142" column="44" selection-start-line="142" selection-start-column="44" selection-end-line="142" selection-end-column="44" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/utils/PropertiesUtil.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="238">
@@ -1032,10 +1068,123 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/impl/MessageQueueListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-864">
+          <caret line="8" column="8" selection-start-line="8" selection-start-column="8" selection-end-line="8" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/OnMessageQueueListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="25">
+          <caret line="7" column="3" selection-start-line="7" selection-start-column="3" selection-end-line="7" selection-end-column="3" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/OnLoginListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="125">
+          <caret line="5" column="1" selection-start-line="5" selection-start-column="1" selection-end-line="5" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/service/PostService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1575">
+          <caret line="67" column="64" selection-start-line="67" selection-start-column="64" selection-end-line="67" selection-end-column="64" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#1706#1707#0" expanded="true" />
+            <element signature="e#1837#1838#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/interfaces/OnUploadInfoListener.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="50">
+          <caret line="2" column="17" selection-start-line="2" selection-start-column="17" selection-end-line="2" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ui/controller/LoginController.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="371">
+          <caret line="26" column="91" selection-start-line="26" selection-start-column="91" selection-end-line="26" selection-end-column="91" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/bean/Classes.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="100">
+          <caret line="4" selection-start-line="4" selection-end-line="4" />
+          <folding>
+            <element signature="e#228#229#0" expanded="true" />
+            <element signature="e#255#256#0" expanded="true" />
+            <element signature="e#295#296#0" expanded="true" />
+            <element signature="e#327#328#0" expanded="true" />
+            <element signature="e#1211#1212#0" expanded="true" />
+            <element signature="e#1242#1243#0" expanded="true" />
+            <element signature="e#1290#1291#0" expanded="true" />
+            <element signature="e#1330#1331#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ui/controller/ShuakeController.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13">
-          <caret line="100" column="40" lean-forward="true" selection-start-line="100" selection-start-column="40" selection-end-line="100" selection-end-column="40" />
+        <state relative-caret-position="-12">
+          <caret line="246" column="11" lean-forward="true" selection-start-line="246" selection-start-column="11" selection-end-line="246" selection-end-column="11" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <element signature="e#2595#2969#0" expanded="true" />
+            <element signature="e#2968#2969#0" expanded="true" />
+            <element signature="e#3507#3508#0" expanded="true" />
+            <element signature="e#3556#3557#0" expanded="true" />
+            <element signature="e#4779#4780#0" expanded="true" />
+            <element signature="e#4819#4820#0" expanded="true" />
+            <element signature="e#5301#5302#0" expanded="true" />
+            <element signature="e#5348#5349#0" expanded="true" />
+            <element signature="e#5924#5925#0" expanded="true" />
+            <element signature="e#5964#5965#0" expanded="true" />
+            <element signature="e#5645#5646#0" expanded="true" />
+            <element signature="e#5695#5696#0" expanded="true" />
+            <element signature="e#5737#5738#0" expanded="true" />
+            <element signature="e#5776#5777#0" expanded="true" />
+            <element signature="e#5973#5974#0" expanded="true" />
+            <element signature="e#6040#6041#0" expanded="true" />
+            <element signature="e#6665#6666#0" expanded="true" />
+            <element signature="e#6705#6706#0" expanded="true" />
+            <element signature="e#6887#6888#0" expanded="true" />
+            <element signature="e#6927#6928#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ChaoXingTaskExecutor.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-20">
+          <caret line="253" column="31" selection-start-line="253" selection-start-column="31" selection-end-line="253" selection-end-column="31" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/utils/UserUtil.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="511">
+          <caret line="138" column="4" selection-start-line="138" selection-start-column="4" selection-end-line="138" selection-end-column="4" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

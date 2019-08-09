@@ -6,6 +6,7 @@ import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
+import interfaces.OnLoginListener;
 import javafx.application.Platform;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
@@ -23,7 +24,7 @@ import java.net.URL;
 import java.util.Properties;
 import java.util.ResourceBundle;
 
-public class LoginController implements Initializable, EventHandler<ActionEvent> , UserUtil.OnLoginListener {
+public class LoginController implements Initializable, EventHandler<ActionEvent> , OnLoginListener {
 
     @FXML
     private JFXTextField tf_username;
