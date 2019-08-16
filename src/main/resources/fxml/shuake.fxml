@@ -40,16 +40,16 @@
 
     <center>
         <GridPane style="-fx-padding: 10 10 10 10">
-            <Text text="功能" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Text text="设置" GridPane.columnIndex="0" GridPane.rowIndex="0" />
 
             <JFXRadioButton text="静音播放" GridPane.columnIndex="0" GridPane.rowIndex="1" style="-fx-padding: 5 5 5 5" selected="true" disable="true"/>
 
             <Label text="倍速播放" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-padding: 5 5 5 5"/>
             <Group GridPane.columnIndex="1" GridPane.rowIndex="2">
                 <HBox spacing="5">
-                    <JFXRadioButton text="1倍" disable="true"/>
+                    <JFXRadioButton text="1倍(推荐)" disable="true" selected="true"/>
                     <JFXRadioButton text="2倍" disable="true"/>
-                    <JFXRadioButton text="5倍" disable="true" selected="true"/>
+                    <JFXRadioButton text="5倍" disable="true"/>
                     <JFXRadioButton text="12倍" disable="true"/>
                 </HBox>
             </Group>

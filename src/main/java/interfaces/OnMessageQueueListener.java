@@ -20,4 +20,7 @@ public interface OnMessageQueueListener {
     void onExceptiom();
     void onCourseStart();
     void onCourseCompleted();
+    void onClassCompleted(String className);
+    void onSchoolURLFound(String url);
+    void onSchoolURLNOTFound(String causeBy);
 }

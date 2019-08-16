@@ -1,7 +1,7 @@
 package com.acong.chaoxingcrawl.ui.controller;
 
 import com.acong.chaoxingcrawl.utils.PropertiesUtil;
-import com.acong.chaoxingcrawl.utils.UserUtil;
+import com.acong.chaoxingcrawl.utils.net.UserUtil;
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXCheckBox;
 import com.jfoenix.controls.JFXPasswordField;

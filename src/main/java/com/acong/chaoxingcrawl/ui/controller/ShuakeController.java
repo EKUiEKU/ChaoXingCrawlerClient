@@ -6,7 +6,7 @@ import com.acong.chaoxingcrawl.bean.*;
 import com.acong.chaoxingcrawl.mq.Looper;
 import com.acong.chaoxingcrawl.taskes.WatchChaoXingTask;
 import com.acong.chaoxingcrawl.utils.PropertiesUtil;
-import com.acong.chaoxingcrawl.utils.UserUtil;
+import com.acong.chaoxingcrawl.utils.net.UserUtil;
 import com.acong.chaoxingcrawl.utils.interfaces.OnUploadClassesListener;
 import com.jfoenix.controls.*;
 import interfaces.OnUploadInfoListener;
@@ -88,7 +88,9 @@ public class ShuakeController extends MessageQueueListener
         info.setUsername(username);
         info.setPassword(password);
         info.setCourseName(tf_course.getText().trim());
+        info.setSchool(tf_unit.getText());
 
+        lv_clazz.getItems().clear();
         thread = new Thread(new Runnable() {
             public void run() {
                 Looper.prepare();
@@ -260,6 +262,12 @@ public class ShuakeController extends MessageQueueListener
         cc.setTitle(className);
         c.add(cc);
         uploadClass(c);
+    }
+
+    @Override
+    public void onSchoolURLNOTFound(String causeBy) {
+        super.onSchoolURLNOTFound(causeBy);
+        enableInteractive(false);
     }
 
 

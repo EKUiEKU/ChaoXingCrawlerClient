@@ -1,7 +1,7 @@
 package com.acong.chaoxingcrawl.taskes;
 
 import com.acong.chaoxingcrawl.taskes.base.BaseTask;
-import com.acong.chaoxingcrawl.utils.DamagouUtil;
+import com.acong.chaoxingcrawl.utils.net.DamagouUtil;
 import com.acong.chaoxingcrawl.values.TaskCode;
 import org.jetbrains.annotations.NotNull;
 

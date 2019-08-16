@@ -92,4 +92,12 @@ public class TaskCode {
      * 课堂信息
      */
     public static final int HANDLER_CLASS_INFO = 21;
+    /**
+     * 找到了单位的登陆页面
+     */
+    public static final int HANDLER_SCHOOL_URL_FOUND = 22;
+    /**
+     * 没有找到单位的登陆页面
+     */
+    public static final int HANDLER_SCHOOL_URL_NOT_FOUND = 23;
 }

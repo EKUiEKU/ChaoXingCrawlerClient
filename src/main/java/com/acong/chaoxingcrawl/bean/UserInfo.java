@@ -7,6 +7,7 @@ public class UserInfo {
     private String username;
     private String password;
     private String courseName;
+    private String school;
 
     public String getUsername() {
         return username;
@@ -32,10 +33,19 @@ public class UserInfo {
         this.courseName = courseName;
     }
 
-    public UserInfo(@NotNull String username,@NotNull String password,@NotNull String courseName) {
+    public String getSchool() {
+        return school;
+    }
+
+    public void setSchool(String school) {
+        this.school = school;
+    }
+
+    public UserInfo(@NotNull String school, @NotNull String username, @NotNull String password, @NotNull String courseName) {
         this.username = username;
         this.password = password;
         this.courseName = courseName;
+        this.school = school;
     }
 
     public UserInfo(){

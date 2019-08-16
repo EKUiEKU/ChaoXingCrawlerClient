@@ -230,6 +230,9 @@ public class ChaoXingTaskExecutor extends ThreadPoolExecutor implements Handler.
                     .HANDLER_CLASS_COMPLETED:
                 ClazzBean bean5 = (ClazzBean) msg.obj;
                 callBack("消息队列:" + msg.arg1.getUsername() + " [" + bean5.getClassName() + "]->[视频播放]->[播放完成]");
+                if (onMessageQueueListener != null){
+                    onMessageQueueListener.onClassCompleted(bean5.getClassName());
+                }
                 break;
             case TaskCode
                     .HANDLER_CLASS_PPT_PROGRESS:
@@ -250,7 +253,7 @@ public class ChaoXingTaskExecutor extends ThreadPoolExecutor implements Handler.
                 break;
             case TaskCode
                     .HANDLER_EXCEPTION:
-                callBack("消息队列:[错误]->[本程序出现了异常,很有可能是浏览器中途被你关掉了。]");
+                callBack("消息队列:[发生了严重的错误]->[本程序出现了异常,很有可能是浏览器中途被你关掉了。]");
                 if (onMessageQueueListener != null){
                     onMessageQueueListener.onExceptiom();
                 }
@@ -260,6 +263,20 @@ public class ChaoXingTaskExecutor extends ThreadPoolExecutor implements Handler.
                 if (onMessageQueueListener != null)
                     onMessageQueueListener.onCourseStart();
                 break;
+            case TaskCode
+                    .HANDLER_SCHOOL_URL_FOUND:
+                callBack("消息队列:[学校/单位]->[登陆地址]->[" + msg.obj + "]");
+
+                if (onMessageQueueListener != null)
+                    onMessageQueueListener.onSchoolURLFound(msg.obj + "");
+                break;
+                case TaskCode
+                        .HANDLER_SCHOOL_URL_NOT_FOUND:
+                    callBack("消息队列:[学校/单位]->[错误]->[" + msg.obj + "]");
+
+                    if (onMessageQueueListener != null)
+                        onMessageQueueListener.onSchoolURLNOTFound(msg.obj + "");
+                    break;
         }
         return false;
     }
@@ -275,11 +292,12 @@ public class ChaoXingTaskExecutor extends ThreadPoolExecutor implements Handler.
      * 回调到UI线程方法
      */
 
+    private int indexCode = 1;
     private void callBack(String msg){
         if (onMessageQueueListener != null){
-            onMessageQueueListener.onMessage(msg);
+            onMessageQueueListener.onMessage((indexCode++) + ":" + msg);
         }else{
-            System.out.println(msg);
+            System.out.println((indexCode++) + ":" +msg);
         }
     }
 }

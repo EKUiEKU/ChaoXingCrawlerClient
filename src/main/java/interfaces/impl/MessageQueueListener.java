@@ -56,4 +56,16 @@ public class MessageQueueListener implements OnMessageQueueListener {
     public void onCourseCompleted() {
 
     }
+
+    public void onClassCompleted(String className) {
+
+    }
+
+    public void onSchoolURLFound(String url) {
+
+    }
+
+    public void onSchoolURLNOTFound(String causeBy) {
+
+    }
 }

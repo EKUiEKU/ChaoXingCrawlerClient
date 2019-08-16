@@ -1,16 +1,18 @@
 package com.acong.chaoxingcrawl.taskes;
 
 import com.acong.chaoxingcrawl.ChaoXingTaskExecutor;
-import com.acong.chaoxingcrawl.bean.ClazzBean;
-import com.acong.chaoxingcrawl.bean.Progress;
-import com.acong.chaoxingcrawl.bean.TabBean;
-import com.acong.chaoxingcrawl.bean.UserInfo;
-import com.acong.chaoxingcrawl.exception.ElementException;
+import com.acong.chaoxingcrawl.bean.*;
 import com.acong.chaoxingcrawl.taskes.base.BaseTask;
-import com.acong.chaoxingcrawl.utils.DamagouUtil;
+import com.acong.chaoxingcrawl.utils.net.DamagouUtil;
 import com.acong.chaoxingcrawl.values.TaskCode;
+import com.google.gson.Gson;
+import okhttp3.*;
 import org.jetbrains.annotations.NotNull;
-import org.openqa.selenium.*;
+import org.openqa.selenium.By;
+import org.openqa.selenium.Cookie;
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
+import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import javax.imageio.ImageIO;
@@ -34,6 +36,15 @@ public class WatchChaoXingTask extends BaseTask {
     public WatchChaoXingTask(@NotNull UserInfo info) {
         userInfo = info;
 
+        File f = new File("");
+        String cf = null;
+        try {
+            cf = f.getCanonicalPath();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        System.setProperty("webdriver.chrome.driver",cf + "/chromedriver.exe");
+        System.out.println(cf);
         driver = new ChromeDriver();
 
         clazzBeanList = new ArrayList<ClazzBean>();
@@ -44,207 +55,119 @@ public class WatchChaoXingTask extends BaseTask {
     @Override
     public void run() {
         super.run();
-        System.out.println(userInfo.getUsername() + ":正在登陆:" + userInfo.getUsername());
+        try {
+            String schoolURL = findURLBySchool(userInfo.getSchool());
 
-        driver.get("http://passport2.chaoxing.com/login?fid=2134&refer=http://ptu.fanya.chaoxing.com");
-
-        driver.findElement(By.xpath("//*[@id=\"unameId\"]")).sendKeys(userInfo.getUsername());
-        driver.findElement(By.xpath("//*[@id=\"passwordId\"]")).sendKeys(userInfo.getPassword());
-
-        final WebElement InputCode = driver.findElement(By.xpath("//*[@id=\"numcode\"]"));
-
-
-        //截取验证码
-        WebElement img_code = driver.findElement(By.xpath("//*[@id=\"numVerCode\"]"));
-
-        byte[] img = screenshot(img_code);
-
-        final WebElement click = driver.findElement(By.xpath("//*[@id=\"form\"]/table/tbody/tr[7]/td[2]/label/input"));
-
-        ChaoXingTaskExecutor.getInstance().execute(new com.acong.chaoxingcrawl.taskes.DamaTask(img, DamagouUtil.TYPE.TYPE_ONLY_NUMBSERS, this));
-
-        synchronized (this) {
-            try {
-                this.wait();
-            } catch (InterruptedException e) {
-                e.printStackTrace();
-            }
-        }
-
-        /**
-         * 判断是否打码成功
-         */
-        if (imgCode != null) {
-            //打码成功
-            InputCode.sendKeys(this.imgCode);
-            //单击登陆
-            click.click();
-
-            //判断是否登陆成功
-            if (!driver.getTitle().equals("用户登录")) {
-                //登陆成功
-                //保存登陆的Cookies
-                Set<Cookie> cookies = driver.manage().getCookies();
-
-                sendMessage(TaskCode.HANDLER_LOGIN_CHAOXING_SUCCESS, cookies, userInfo);
-            } else {
-                //登陆失败
-                System.out.println(userInfo.getUsername() + ":登陆失败！");
-                //查找登陆失败的原因
-                String cause = driver.findElementByClassName("show_error").getText().trim();
-                /**
-                 * 1.用户名或密码错误 2.密码错误  3.验证码错误
-                 */
-                if (cause.equals("用户名或密码错误") || cause.equals("密码错误")) {
-                    sendMessage(TaskCode.HANDLER_LOGIN_CHAOXING_FAILURE_UOP_ERROR, null, userInfo);
-                } else if (cause.equals("验证码错误")) {
-                    sendMessage(TaskCode.HANDLER_LOGIN_CHAOXING_FAILURE_CODE_ERROR, null, userInfo);
-                    //来执行一次登陆。
-
-                }
-
+            if (schoolURL.equals("")){
                 driver.close();
-
-
                 return;
             }
 
-            //获取用户的名字
-            String name = driver.findElement(By.xpath("/html/body/div[3]/div/div[2]/div/span/span")).getText();
-            sendMessage(TaskCode.HANDLER_STUDENT_NAME,name,userInfo);
+            driver.get(schoolURL);
 
-            /**
-             * 开始刷网课
-             */
-            String url = findCourseURL(userInfo.getCourseName());
+            driver.findElement(By.xpath("//*[@id=\"unameId\"]")).sendKeys(userInfo.getUsername());
+            driver.findElement(By.xpath("//*[@id=\"passwordId\"]")).sendKeys(userInfo.getPassword());
 
-            if (url == null) {
-                return;
-            }
+            final WebElement InputCode = driver.findElement(By.xpath("//*[@id=\"numcode\"]"));
 
-            driver.get(url);
-            //获取网课课程表
-            WebElement course = null;
-            try {
-                course = findElement(driver, By.xpath("//*[@id=\"coursetree\"]"));
-            } catch (ElementException e) {
-                sendMessage(TaskCode.HANDLER_COURSE_TABLE_NO_FOUND,null,userInfo);
-                return;
-            }
-            List<WebElement> list_clazz = course.findElements(By.className("ncells"));
-            for (WebElement item : list_clazz) {
-                ClazzBean bean = new ClazzBean();
-                String span = null;
-                WebElement element_a = null;
-                /**
-                 * 翻车高发区 所以捕捉一下异常
-                 */
+
+            //截取验证码
+            WebElement img_code = driver.findElement(By.xpath("//*[@id=\"numVerCode\"]"));
+
+            byte[] img = screenshot(img_code);
+
+            final WebElement click = driver.findElement(By.xpath("//*[@id=\"form\"]/table/tbody/tr[7]/td[2]/label/input"));
+
+            ChaoXingTaskExecutor.getInstance().execute(new com.acong.chaoxingcrawl.taskes.DamaTask(img, DamagouUtil.TYPE.TYPE_ONLY_NUMBSERS, this));
+
+            synchronized (this) {
                 try {
-                    element_a = item.findElement(By.tagName("a"));
-                    String className = element_a.getText();
-                    bean.setClassName(className);
-                    WebElement item_span = item.findElements(By.tagName("span")).get(1);
-                    span = item_span.getAttribute("class");
-                } catch (Exception e) {
-                    continue;
-                }
-                if (span.equals("roundpointStudent  blue")) {
-                    bean.setComplete(true);
-                    bean.setClassURL("-");
-
-                } else {
-                    bean.setComplete(false);
-                    /**
-                     * @反爬虫z
-                     * href标签可能因为完成了而不加载出来 导致程序报错。
-                     */
-                    try {
-                        String clazzURL = element_a.getAttribute("href");
-                        bean.setClassURL(clazzURL);
-                    } catch (Exception e) {
-                        continue;
-                    }
-                }
-                sendMessage(TaskCode.HANDLER_CLASS_INFO,bean,userInfo);
-                clazzBeanList.add(bean);
-            }
-
-            /**
-             * 开始执行未完成的课程
-             */
-
-            /**
-             * 开始刷网课
-             */
-            sendMessage(TaskCode.HANDLER_COURSE_STARTED);
-
-            for (int i = 0; i < clazzBeanList.size(); i++) {
-                ClazzBean bean = clazzBeanList.get(i);
-                if (bean.getComplete())
-                    continue;
-
-                sendMessage(TaskCode.HANDLER_CLASS_STARTED,bean,userInfo);
-                //跳转至指定URL
-                driver.executeScript(bean.getClassURL(), course);
-
-                /**
-                 * @反爬虫1
-                 * 判断一下章节验证码是否出现
-                 */
-                WebElement element_img = driver.findElement(By.id("chapterVerificationCode")).findElement(By.tagName("img"));
-                /**
-                 * 出现验证码的特征是 http://xxxx/verifyCode/studychapter?xxxxxxxxxx
-                 * 没有出现验证码特征是 http://xxxx/verifyCode/studychapter
-                 */
-                if (element_img.getAttribute("src").contains("?")) {
-                    //获取验证码图形
-                    System.out.println(userInfo.getUsername() + ":[反爬虫]->[出现验证码,开始验证]");
-                    byte[] img_ = screenshot(element_img);
-                    ChaoXingTaskExecutor.getInstance().execute(new com.acong.chaoxingcrawl.taskes.DamaTask(img_, DamagouUtil.TYPE.TYPE_NUMBERS_ALPHABET, this));
-                    imgCode = null;
-
-                    synchronized (this) {
-                        try {
-                            this.wait();
-                        } catch (InterruptedException e) {
-                            e.printStackTrace();
-                        }
-                    }
-                    if (img_code != null) {
-                        driver.findElement(By.id("chapterVerificationCode")).findElement(By.tagName("input")).sendKeys(imgCode);
-                        driver.findElement(By.id("chapterVerificationCode")).findElement(By.className("bluebtn")).click();
-                    } else {
-                        /**
-                         * 获取验证码失败的逻辑代码
-                         */
-                        return;
-                    }
-                    //return;
-                }
-                try {
-                    Thread.sleep(1000);
+                    this.wait();
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
-
-                /**
-                 * @反爬虫2
-                 */
-                //WebElement ccc = driver.findElement(By.id("ccc"));
-                //System.out.println(ccc.getAttribute("src"));
-
-                randomDelay(1000, 5000);
-                playVedio(bean);
-                /**
-                 * 恢复原来的frame
-                 */
-                driver.switchTo().defaultContent();
-                course = driver.findElement(By.xpath("//*[@id=\"coursetree\"]"));
             }
-            sendMessage(TaskCode.HANDLER_COURSE_COMPLETED,null,userInfo);
-            driver.close();
-        } else {
-            //打码失败
+
+            /**
+             * 判断是否打码成功
+             */
+            if (imgCode != null) {
+                //打码成功
+                InputCode.sendKeys(this.imgCode);
+                //单击登陆
+                click.click();
+
+                //判断是否登陆成功
+                if (!driver.getTitle().equals("用户登录")) {
+                    //登陆成功
+                    //保存登陆的Cookies
+                    Set<Cookie> cookies = driver.manage().getCookies();
+                    sendMessage(TaskCode.HANDLER_LOGIN_CHAOXING_SUCCESS, cookies, userInfo);
+                } else {
+                    //登陆失败
+                    System.out.println(userInfo.getUsername() + ":登陆失败！");
+                    //查找登陆失败的原因
+                    String cause = driver.findElementByClassName("err-tip").getText().trim();
+                    /**
+                     * 1.用户名或密码错误 2.密码错误  3.验证码错误
+                     */
+                    if (cause.equals("用户名或密码错误") || cause.equals("密码错误")) {
+                        sendMessage(TaskCode.HANDLER_LOGIN_CHAOXING_FAILURE_UOP_ERROR, null, userInfo);
+                    } else if (cause.equals("验证码错误")) {
+                        sendMessage(TaskCode.HANDLER_LOGIN_CHAOXING_FAILURE_CODE_ERROR, null, userInfo);
+                        //来执行一次登陆。
+
+                    }
+
+                    driver.close();
+
+
+                    return;
+                }
+
+                //获取用户的名字
+                randomDelay(1000,1500);
+                String name = driver.findElement(By.className("personalName")).getAttribute("title");
+                sendMessage(TaskCode.HANDLER_STUDENT_NAME, name, userInfo);
+
+                /**
+                 * 开始刷网课
+                 */
+                findCourseURL(userInfo.getCourseName());
+
+
+                /**
+                 * 开始执行未完成的课程
+                 */
+
+                /**
+                 * 开始刷网课
+                 */
+                sendMessage(TaskCode.HANDLER_COURSE_STARTED);
+
+                for (int i = 0; i < clazzBeanList.size(); i++) {
+                    ClazzBean bean = clazzBeanList.get(i);
+                    if (bean.getComplete())
+                        continue;
+
+                    sendMessage(TaskCode.HANDLER_CLASS_STARTED, bean, userInfo);
+                    //跳转至指定URL
+                    driver.get(bean.getClassURL());
+
+                    randomDelay(1000, 5000);
+                    playVedio(bean);
+                }
+                sendMessage(TaskCode.HANDLER_COURSE_COMPLETED, null, userInfo);
+                driver.close();
+            } else {
+                //打码失败
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+            System.out.println("close");
+            sendMessage(TaskCode.HANDLER_EXCEPTION);
+        } finally {
+
         }
     }
 
@@ -371,10 +294,10 @@ public class WatchChaoXingTask extends BaseTask {
         List<WebElement> iframes = driver.findElements(By.tagName("iframe"));
 
         List<String> iframes_class = new ArrayList<String>();
-        for (WebElement iframe : iframes){
+        for (WebElement iframe : iframes) {
             iframes_class.add(iframe.getAttribute("class"));
         }
-        for (int i = 0;i < iframes_class.size();i++) {
+        for (int i = 0; i < iframes_class.size(); i++) {
             String clazzName = iframes_class.get(i);
 
             driver.switchTo().defaultContent();
@@ -384,19 +307,19 @@ public class WatchChaoXingTask extends BaseTask {
                 /**
                  * 播放视频
                  */
-                sendMessage(TaskCode.HANDLER_CLASS_VEDIO_STARTED,clazzInfo,userInfo);
+                sendMessage(TaskCode.HANDLER_CLASS_VEDIO_STARTED, clazzInfo, userInfo);
                 autoPlay(clazzInfo);
             } else if (clazzName.equals("ans-attach-online insertdoc-online-pdf") || clazzName.equals("ans-attach-online insertdoc-online-ppt")) {
                 /**
                  * 播放ppt/pdf
                  */
-                sendMessage(TaskCode.HANDLER_CLASS_PPT_STARTED,clazzInfo,userInfo);
+                sendMessage(TaskCode.HANDLER_CLASS_PPT_STARTED, clazzInfo, userInfo);
                 playPPT(clazzInfo);
             } else if (clazzName.equals("")) {
                 /**
                  * 本章测验
                  */
-                sendMessage(TaskCode.HANDLER_CLASS_TEST,clazzInfo,userInfo);
+                sendMessage(TaskCode.HANDLER_CLASS_TEST, clazzInfo, userInfo);
             }
         }
     }
@@ -409,7 +332,7 @@ public class WatchChaoXingTask extends BaseTask {
 
             for (int z = 0; z < num_total - 1; z++) {
                 btn_next.click();
-                sendMessage(TaskCode.HANDLER_CLASS_PPT_PROGRESS,clazzInfo,userInfo,z+2);
+                sendMessage(TaskCode.HANDLER_CLASS_PPT_PROGRESS, clazzInfo, userInfo, z + 2);
                 randomDelay(2000, 3000);
             }
         } catch (Exception e) {
@@ -526,21 +449,21 @@ public class WatchChaoXingTask extends BaseTask {
                     continue;
                 }
 
-                sendMessage(TaskCode.HANDLER_CLASS_VIDEO_PROGRESS,new Progress(durationFormat(Math.round(currentTime.floatValue())),durationFormat(Math.round(totalTime.floatValue()))),userInfo,clazzInfo);
+                sendMessage(TaskCode.HANDLER_CLASS_VIDEO_PROGRESS, new Progress(durationFormat(Math.round(currentTime.floatValue())), durationFormat(Math.round(totalTime.floatValue()))), userInfo, clazzInfo);
                 try {
                     Thread.sleep(1000);
                 } catch (InterruptedException e) {
                     e.printStackTrace();
                 }
             }
-        }catch (Exception e){
+        } catch (Exception e) {
             sendMessage(TaskCode.HANDLER_EXCEPTION);
         }
 
         /**
          * 一节课视频播放完成
          */
-        sendMessage(TaskCode.HANDLER_CLASS_COMPLETED,clazzInfo,userInfo);
+        sendMessage(TaskCode.HANDLER_CLASS_COMPLETED, clazzInfo, userInfo);
 
         /**
          *
@@ -609,19 +532,10 @@ public class WatchChaoXingTask extends BaseTask {
         }
     }
 
-    private WebElement findElement(@NotNull WebDriver driver, @NotNull By by) throws ElementException {
-        List<WebElement> elementList = driver.findElements(by);
-        if (elementList.size() == 0) {
-            throw new ElementException();
-        }
-
-        return elementList.get(0);
-    }
-
-    public String findCourseURL(@NotNull String courseName) {
+    public void findCourseURL(@NotNull String courseName) {
         //进入学习空间
         driver.get("http://i.mooc.chaoxing.com/space/index.shtml");
-        //randomDelay(3000,5000);
+        randomDelay(3000,5000);
         driver.switchTo().frame(driver.findElement(By.id("frame_content")));
         List<WebElement> courses = driver.findElement(By.className("ulDiv")).findElement(By.tagName("ul")).findElements(By.tagName("li"));
         //找对相应的课程名称
@@ -634,13 +548,81 @@ public class WatchChaoXingTask extends BaseTask {
             if (clazzName.equals(courseName.trim())) {
                 driver.get(url);
 
-                WebElement unit_0 = driver.findElement(By.className("timeline")).findElements(By.className("units")).get(0);
-                String attribute = unit_0.findElements(By.className("leveltwo")).get(0).findElement(By.className("articlename")).findElement(By.tagName("a")).getAttribute("href");
-                sendMessage(TaskCode.HANDLER_COURSE_URL, attribute, userInfo,courseName);
-                return attribute;
+//                WebElement unit_0 = driver.findElement(By.className("timeline")).findElements(By.className("units")).get(0);
+//                String attribute = unit_0.findElements(By.className("leveltwo")).get(0).findElement(By.className("articlename")).findElement(By.tagName("a")).getAttribute("href");
+//                sendMessage(TaskCode.HANDLER_COURSE_URL, attribute, userInfo,courseName);
+                List<WebElement> clearfixs = driver.findElements(By.className("clearfix"));
+                try {
+                    for (WebElement clearfix : clearfixs) {
+                        String chapterNumber = clearfix.findElement(By.className("chapterNumber")).getText();
+                        String className = clearfix.findElement(By.className("articlename")).getText();
+                        String urlCourse = clearfix.findElement(By.tagName("a")).getAttribute("href");
+                        String em = clearfix.findElement(By.className("icon")).findElement(By.tagName("em")).getText();
+                        ClazzBean bean = new ClazzBean();
+                        bean.setClassURL(urlCourse);
+                        bean.setClassName(chapterNumber + " " + className);
+                        bean.setComplete(em.equals("") ? true : false);
+
+                        sendMessage(TaskCode.HANDLER_CLASS_INFO, bean, userInfo);
+                        clazzBeanList.add(bean);
+                    }
+                }catch (Exception e){
+
+                }
+
+                return;
             }
         }
-        sendMessage(TaskCode.HANDLER_COURSE_URL_NO_FOUND, this, userInfo,courseName);
-        return null;
+        sendMessage(TaskCode.HANDLER_COURSE_URL_NO_FOUND, this, userInfo, courseName);
+    }
+
+
+    /**
+     * 通过学校名查找该学校的登陆页面的URL。
+     * @param schoolName 学校或单位的名字
+     * @return           学校登陆页面的URL
+     */
+    public String findURLBySchool(String schoolName){
+        String SEARCH_URL = "http://passport2.chaoxing.com/org/searchforms";
+        OkHttpClient client = new OkHttpClient();
+
+        RequestBody formBody = new FormBody.Builder()
+                .add("pid", "-1")
+                .add("filter", schoolName)
+                .build();
+
+        Request request = new Request.Builder()
+                .url(SEARCH_URL)
+                .post(formBody)
+                .build();
+
+        try {
+            /**
+             * 同步请求 懒得搞异步了。
+             */
+            Response respo = client.newCall(request).execute();
+            String json = respo.body().string();
+            SchoolBean schoolBean;
+            try{
+                schoolBean = new Gson().fromJson(json, SchoolBean.class);
+            }catch (Exception e){
+                sendMessage(TaskCode.HANDLER_SCHOOL_URL_NOT_FOUND,"返回的数据有错误");
+                return "";
+            }
+
+            if (schoolBean.isResult()){
+                for(SchoolBean.FromsBean form : schoolBean.getFroms()){
+                    if (form.getName().trim().equals(schoolName.trim())){
+                        String result = "http://passport2.chaoxing.com/login?loginType=3&fid=" + form.getId();
+                        sendMessage(TaskCode.HANDLER_SCHOOL_URL_FOUND,result);
+                        return result;
+                    }
+                }
+            }
+            sendMessage(TaskCode.HANDLER_SCHOOL_URL_NOT_FOUND,"该单位/学校不存在。");
+        } catch (IOException e) {
+            sendMessage(TaskCode.HANDLER_SCHOOL_URL_NOT_FOUND,"网络错误");
+        }
+        return "";
     }
 }
