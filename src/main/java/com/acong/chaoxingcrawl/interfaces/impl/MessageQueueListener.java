@@ -1,8 +1,8 @@
-package interfaces.impl;
+package com.acong.chaoxingcrawl.interfaces.impl;
 
 import com.acong.chaoxingcrawl.bean.ClazzBean;
 import com.acong.chaoxingcrawl.bean.Progress;
-import interfaces.OnMessageQueueListener;
+import com.acong.chaoxingcrawl.interfaces.OnMessageQueueListener;
 
 public class MessageQueueListener implements OnMessageQueueListener {
     public void onMessage(String msg) {

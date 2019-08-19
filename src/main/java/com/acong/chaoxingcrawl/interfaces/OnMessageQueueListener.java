@@ -1,4 +1,4 @@
-package interfaces;
+package com.acong.chaoxingcrawl.interfaces;
 
 import com.acong.chaoxingcrawl.bean.ClazzBean;
 import com.acong.chaoxingcrawl.bean.Progress;

@@ -1,4 +1,4 @@
-package interfaces;
+package com.acong.chaoxingcrawl.interfaces;
 
 public interface OnLoginListener{
     void onLoginSuccess(Long uid);

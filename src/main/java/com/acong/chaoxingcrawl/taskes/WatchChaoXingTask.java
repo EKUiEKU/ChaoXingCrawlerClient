@@ -107,7 +107,7 @@ public class WatchChaoXingTask extends BaseTask {
                     //登陆失败
                     System.out.println(userInfo.getUsername() + ":登陆失败！");
                     //查找登陆失败的原因
-                    String cause = driver.findElementByClassName("err-tip").getText().trim();
+                    String cause = driver.findElementByClassName("show_error").getText().trim();
                     /**
                      * 1.用户名或密码错误 2.密码错误  3.验证码错误
                      */

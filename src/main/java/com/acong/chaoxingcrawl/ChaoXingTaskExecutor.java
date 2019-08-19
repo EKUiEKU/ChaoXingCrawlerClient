@@ -6,7 +6,7 @@ import com.acong.chaoxingcrawl.mq.Handler;
 import com.acong.chaoxingcrawl.mq.Message;
 import com.acong.chaoxingcrawl.taskes.WatchChaoXingTask;
 import com.acong.chaoxingcrawl.values.TaskCode;
-import interfaces.OnMessageQueueListener;
+import com.acong.chaoxingcrawl.interfaces.OnMessageQueueListener;
 import org.jetbrains.annotations.NotNull;
 import org.openqa.selenium.Cookie;
 

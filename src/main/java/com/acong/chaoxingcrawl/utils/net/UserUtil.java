@@ -7,8 +7,8 @@ import com.acong.chaoxingcrawl.utils.interfaces.OnUploadClassesListener;
 import com.google.gson.Gson;
 import com.google.gson.JsonObject;
 import com.google.gson.JsonParser;
-import interfaces.OnLoginListener;
-import interfaces.OnUploadInfoListener;
+import com.acong.chaoxingcrawl.interfaces.OnLoginListener;
+import com.acong.chaoxingcrawl.interfaces.OnUploadInfoListener;
 import okhttp3.*;
 import org.jetbrains.annotations.NotNull;
 
