@@ -6,51 +6,31 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51cfeb21-41c2-4be6-8aee-f1f07bb62d3f" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/bean/SchoolBean.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/artifacts/ChaoXingCrwal_jar.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/artifacts/ChaoXingCrawlerClient_jar.xml" afterDir="false" />
+    <list default="true" id="51cfeb21-41c2-4be6-8aee-f1f07bb62d3f" name="Default Changelist" comment="1.修复验证状态的bug&#10;2.将interfaces包由./src/移到./com.acong/chaoxingcrawl/interfaces/">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/utils/net/ImageUtils.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ChaoXingCrwal_jar/ChaoXingCrwal.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ChaoXingCrwal_jar/ChaoXingCrwal.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ChaoXingTaskExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ChaoXingTaskExecutor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/bean/UserInfo.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/bean/UserInfo.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/service/PostService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/service/PostService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/taskes/DamaTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/taskes/DamaTask.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/ChaoXingCrwal.iml" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/artifacts/ChaoXingCrawlerClient_jar/ChaoXingCrawlerClient.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ChaoXingCrawlerClient_jar/ChaoXingCrawlerClient.jar" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/taskes/WatchChaoXingTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/taskes/WatchChaoXingTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ui/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ui/controller/LoginController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ui/controller/ShuakeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ui/controller/ShuakeController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/utils/DamagouUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/utils/net/DamagouUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/utils/UserUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/utils/net/UserUtil.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/values/TaskCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/values/TaskCode.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interfaces/OnMessageQueueListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interfaces/OnMessageQueueListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/interfaces/impl/MessageQueueListener.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/interfaces/impl/MessageQueueListener.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/resources/config.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/utils/PropertiesUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/utils/PropertiesUtil.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/shuake.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/shuake.fxml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/ChaoXingCrawlerClient.kotlin_module" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/chromedriver.exe" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ChaoXingTaskExecutor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ChaoXingTaskExecutor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/bean/UserInfo.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/bean/UserInfo.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/service/PostService$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/service/PostService$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/service/PostService.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/service/PostService.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/taskes/DamaTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/taskes/DamaTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/taskes/WatchChaoXingTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/taskes/WatchChaoXingTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/LoginController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/LoginController$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/LoginController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/ShuakeController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/ShuakeController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/ShuakeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/ShuakeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/DamagouUtil$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/DamagouUtil$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/DamagouUtil$OnDamaListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/DamagouUtil$OnLoginListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/DamagouUtil$TYPE.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/DamagouUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/UserUtil$1.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/UserUtil$2.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/UserUtil$3.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/UserUtil$4.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/UserUtil.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/values/TaskCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/values/TaskCode.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/config.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/PropertiesUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/PropertiesUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/net/UserUtil$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/net/UserUtil$2.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/net/UserUtil$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/net/UserUtil$3.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/net/UserUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/net/UserUtil.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fxml/shuake.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/shuake.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interfaces/OnMessageQueueListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interfaces/OnMessageQueueListener.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interfaces/impl/MessageQueueListener.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/interfaces/impl/MessageQueueListener.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/interfaces/OnLoginListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/interfaces/OnMessageQueueListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/interfaces/OnUploadInfoListener.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/interfaces/impl/MessageQueueListener.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -122,7 +102,7 @@
     <property name="aspect.path.notification.shown" value="true" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary" value="Arquillian JUnit4" />
     <property name="com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.Arquillian JUnit4" value="" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/resources" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="nodejs_package_manager_path" value="npm" />
@@ -219,6 +199,13 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
+    <list>
+      <item itemvalue="Application.Crawler" />
+      <item itemvalue="Application.Test" />
+      <item itemvalue="JUnit.UserUtilTest" />
+      <item itemvalue="JUnit.UserUtilTest.login" />
+      <item itemvalue="JUnit.UserUtilTest (1)" />
+    </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Crawler" />
@@ -304,6 +291,10 @@
       <workItem from="1565714035008" duration="261000" />
       <workItem from="1565769875584" duration="36000" />
       <workItem from="1565939354267" duration="303000" />
+      <workItem from="1566195922869" duration="396000" />
+      <workItem from="1567510512530" duration="5910000" />
+      <workItem from="1567524057470" duration="1732000" />
+      <workItem from="1567525984428" duration="56000" />
     </task>
     <task id="LOCAL-00001" summary="超星学习通爬虫刷课客户端">
       <created>1565282947002</created>
@@ -340,40 +331,15 @@
       <option name="project" value="LOCAL" />
       <updated>1565377412643</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="1.修复验证状态的bug&#10;2.将interfaces包由./src/移到./com.acong/chaoxingcrawl/interfaces/">
+      <created>1566196262956</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1566196262956</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
-  </component>
-  <component name="TestHistory">
-    <history-entry file="UserUtilTest_login - 2019.08.09 at 14h 27m 02s.xml">
-      <configuration name="UserUtilTest.login" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserUtilTest_login - 2019.08.09 at 14h 29m 13s.xml">
-      <configuration name="UserUtilTest.login" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserUtilTest_login - 2019.08.09 at 14h 29m 26s.xml">
-      <configuration name="UserUtilTest.login" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserUtilTest_login - 2019.08.09 at 14h 29m 41s.xml">
-      <configuration name="UserUtilTest.login" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserUtilTest_login - 2019.08.09 at 14h 31m 17s.xml">
-      <configuration name="UserUtilTest.login" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserUtilTest_login - 2019.08.09 at 14h 32m 16s.xml">
-      <configuration name="UserUtilTest.login" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserUtilTest_login - 2019.08.09 at 14h 33m 00s.xml">
-      <configuration name="UserUtilTest.login" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserUtilTest_login - 2019.08.09 at 14h 33m 18s.xml">
-      <configuration name="UserUtilTest.login" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserUtilTest_login - 2019.08.09 at 14h 33m 57s.xml">
-      <configuration name="UserUtilTest.login" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="UserUtilTest_login - 2019.08.09 at 14h 34m 33s.xml">
-      <configuration name="UserUtilTest.login" configurationId="JUnit" />
-    </history-entry>
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -419,6 +385,7 @@
     <MESSAGE value="新增了用户信息保存本地的功能" />
     <MESSAGE value="优化了一些细节" />
     <MESSAGE value="1.修复了获取课程表不完整的BUG&#10;2.增加了本节课任务后更新云端信息的操作" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.修复了获取课程表不完整的BUG&#10;2.增加了本节课任务后更新云端信息的操作" />
+    <MESSAGE value="1.修复验证状态的bug&#10;2.将interfaces包由./src/移到./com.acong/chaoxingcrawl/interfaces/" />
+    <option name="LAST_COMMIT_MESSAGE" value="1.修复验证状态的bug&#10;2.将interfaces包由./src/移到./com.acong/chaoxingcrawl/interfaces/" />
   </component>
 </project>

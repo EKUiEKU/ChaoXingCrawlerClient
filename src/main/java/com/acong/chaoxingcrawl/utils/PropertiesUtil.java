@@ -25,7 +25,7 @@ public class PropertiesUtil {
     public String readProperty(String key) {
         String value = "";
         InputStream is = null;
-        File file = new File("", properiesName);
+        File file = new File( properiesName);
         if (file.exists() == false)
             return null;
         try {
@@ -52,7 +52,7 @@ public class PropertiesUtil {
     public Properties getProperties() {
         Properties p = new Properties();
         InputStream is = null;
-        File file = new File("", properiesName);
+        File file = new File(properiesName);
 
         if (file.exists() == false)
             return null;
@@ -80,7 +80,7 @@ public class PropertiesUtil {
         InputStream is = null;
         OutputStream os = null;
         Properties p = new Properties();
-        File file = new File("", properiesName);
+        File file = new File( properiesName);
         try {
             if (file.exists())
                 p.load(new FileInputStream(file));

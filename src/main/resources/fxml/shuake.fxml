@@ -47,9 +47,9 @@
             <Label text="倍速播放" GridPane.columnIndex="0" GridPane.rowIndex="2" style="-fx-padding: 5 5 5 5"/>
             <Group GridPane.columnIndex="1" GridPane.rowIndex="2">
                 <HBox spacing="5">
-                    <JFXRadioButton text="1倍(推荐)" disable="true" selected="true"/>
+                    <JFXRadioButton text="1倍(推荐)" disable="true"/>
                     <JFXRadioButton text="2倍" disable="true"/>
-                    <JFXRadioButton text="5倍" disable="true"/>
+                    <JFXRadioButton text="5倍" disable="true" selected="true"/>
                     <JFXRadioButton text="12倍" disable="true"/>
                 </HBox>
             </Group>

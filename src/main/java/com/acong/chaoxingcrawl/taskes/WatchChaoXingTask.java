@@ -4,15 +4,13 @@ import com.acong.chaoxingcrawl.ChaoXingTaskExecutor;
 import com.acong.chaoxingcrawl.bean.*;
 import com.acong.chaoxingcrawl.taskes.base.BaseTask;
 import com.acong.chaoxingcrawl.utils.net.DamagouUtil;
+import com.acong.chaoxingcrawl.utils.net.ImageUtils;
 import com.acong.chaoxingcrawl.values.TaskCode;
 import com.google.gson.Gson;
 import okhttp3.*;
 import org.jetbrains.annotations.NotNull;
-import org.openqa.selenium.By;
 import org.openqa.selenium.Cookie;
-import org.openqa.selenium.OutputType;
-import org.openqa.selenium.TakesScreenshot;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 
 import javax.imageio.ImageIO;
@@ -20,10 +18,7 @@ import java.awt.image.BufferedImage;
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Random;
-import java.util.Set;
+import java.util.*;
 
 public class WatchChaoXingTask extends BaseTask {
 
@@ -72,9 +67,19 @@ public class WatchChaoXingTask extends BaseTask {
 
 
             //截取验证码
-            WebElement img_code = driver.findElement(By.xpath("//*[@id=\"numVerCode\"]"));
+            WebElement img_code = driver.findElement(By.id("numVerCode"));
+            String codeURL = img_code.getAttribute("src").toString();
 
-            byte[] img = screenshot(img_code);
+            Set<Cookie> set = driver.manage().getCookies();
+            Iterator<Cookie> iterator = set.iterator();
+            StringBuffer buffer = new StringBuffer();
+            while (iterator.hasNext()){
+                Cookie next = iterator.next();
+                buffer.append(next.getName() + "=" + next.getValue() + ";");
+            }
+
+//            byte[] img = screenshot(img_code);
+            byte[] img = ImageUtils.downloadCheckCode(codeURL,buffer.toString());
 
             final WebElement click = driver.findElement(By.xpath("//*[@id=\"form\"]/table/tbody/tr[7]/td[2]/label/input"));
 
@@ -489,7 +494,7 @@ public class WatchChaoXingTask extends BaseTask {
         return String.format("%02d:%02d:%02d", hours, minutes, seconds);
     }
 
-    private byte[] screenshot(WebElement element) {
+    private byte[] screenshot(WebElement element) throws IOException {
         File screenshot = ((TakesScreenshot) driver).getScreenshotAs(OutputType.FILE);
         BufferedImage fullImg = null;
         byte[] img = null;
@@ -503,14 +508,13 @@ public class WatchChaoXingTask extends BaseTask {
 
             FileInputStream stream = new FileInputStream(screenshot);
 
-            img = new byte[stream.available()];
 
+            img = new byte[stream.available()];
             stream.read(img);
             stream.close();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
         return img;
     }
 
