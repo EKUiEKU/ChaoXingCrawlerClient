@@ -3,19 +3,25 @@ package com.acong.chaoxingcrawl.ui.controller;
 import com.acong.chaoxingcrawl.ChaoXingTaskExecutor;
 import com.acong.chaoxingcrawl.bean.Class;
 import com.acong.chaoxingcrawl.bean.*;
-import com.acong.chaoxingcrawl.mq.Looper;
-import com.acong.chaoxingcrawl.taskes.WatchChaoXingTask;
-import com.acong.chaoxingcrawl.utils.PropertiesUtil;
-import com.acong.chaoxingcrawl.utils.net.UserUtil;
-import com.acong.chaoxingcrawl.utils.interfaces.OnUploadClassesListener;
-import com.jfoenix.controls.*;
 import com.acong.chaoxingcrawl.interfaces.OnUploadInfoListener;
 import com.acong.chaoxingcrawl.interfaces.impl.MessageQueueListener;
+import com.acong.chaoxingcrawl.mq.Looper;
+import com.acong.chaoxingcrawl.taskes.SmartTreeTask;
+import com.acong.chaoxingcrawl.taskes.WatchChaoXingTask;
+import com.acong.chaoxingcrawl.taskes.base.BaseTask;
+import com.acong.chaoxingcrawl.utils.PropertiesUtil;
+import com.acong.chaoxingcrawl.utils.interfaces.OnUploadClassesListener;
+import com.acong.chaoxingcrawl.utils.net.UserUtil;
+import com.jfoenix.controls.*;
+import javafx.beans.value.ChangeListener;
+import javafx.beans.value.ObservableValue;
 import javafx.event.ActionEvent;
 import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Label;
+import javafx.scene.control.Toggle;
+import javafx.scene.control.ToggleGroup;
 import javafx.scene.paint.Color;
 import javafx.scene.text.Text;
 
@@ -53,6 +59,10 @@ public class ShuakeController extends MessageQueueListener
     private Text text_type;
     @FXML
     private Text text_class_progress;
+    @FXML
+    private JFXRadioButton radio_smarttree;
+    @FXML
+    private JFXRadioButton radio_chaoxing;
 
 
     private ChaoXingTaskExecutor chaoXingTaskExecutor;
@@ -60,6 +70,12 @@ public class ShuakeController extends MessageQueueListener
 
     private Long uid;
     private List<Class> classes;
+
+    /**
+     * 选择平台 超星学习通或者智慧树.
+     */
+    private enum TYPE{SmartTree,ChaoXing}
+    private TYPE type = TYPE.SmartTree;
 
     public void handle(ActionEvent event) {
         String who = event.getSource().toString();
@@ -96,7 +112,13 @@ public class ShuakeController extends MessageQueueListener
                 Looper.prepare();
                 chaoXingTaskExecutor = ChaoXingTaskExecutor.getInstance();
                 chaoXingTaskExecutor.setOnMessageQueueListener(ShuakeController.this);
-                chaoXingTaskExecutor.execute(new WatchChaoXingTask(info));
+                BaseTask task = null;
+                if (type == TYPE.SmartTree){
+                    task = new SmartTreeTask(info);
+                }else if (type == TYPE.ChaoXing){
+                    task = new WatchChaoXingTask(info);
+                }
+                chaoXingTaskExecutor.execute(task);
                 Looper.loop();
             }
         });
@@ -106,6 +128,21 @@ public class ShuakeController extends MessageQueueListener
     public void initialize(URL location, ResourceBundle resources) {
         btn_login.setOnAction(this);
 
+        final ToggleGroup group = new ToggleGroup();
+        radio_smarttree.setToggleGroup(group);
+        radio_chaoxing.setToggleGroup(group);
+        radio_smarttree.setUserData(TYPE.SmartTree);
+        radio_chaoxing.setUserData(TYPE.ChaoXing);
+
+        //添加事件
+        group.selectedToggleProperty().addListener(new ChangeListener<Toggle>() {
+            public void changed(ObservableValue<? extends Toggle> observable, Toggle oldValue, Toggle newValue) {
+                if (group.getSelectedToggle() != null) {
+                    type = (TYPE) group.getSelectedToggle().getUserData();
+                    System.out.println(type);
+                }
+            }
+        });
         /**
          * 加载相关信息
          */
@@ -116,6 +153,7 @@ public class ShuakeController extends MessageQueueListener
             tf_username.setText(p.getProperty("chaoxing.username"));
             tf_password.setText(p.getProperty("chaoxing.password"));
         }
+
     }
 
     public void onMessage(String msg) {

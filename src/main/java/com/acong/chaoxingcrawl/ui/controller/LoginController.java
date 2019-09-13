@@ -104,7 +104,7 @@ public class LoginController implements Initializable, EventHandler<ActionEvent>
             public void run() {
                 try {
                     BorderPane page = FXMLLoader.load(getClass().getResource("/fxml/shuake.fxml"));
-                    Scene newScene = new Scene(page,1000,600);
+                    Scene newScene = new Scene(page,1200,600);
                     Stage stage = new Stage();
                     newScene.getStylesheets().add(Math.class.getResource("/css/jfoenix-components.css").toExternalForm());
                     stage.setScene(newScene);

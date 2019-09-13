@@ -100,4 +100,20 @@ public class TaskCode {
      * 没有找到单位的登陆页面
      */
     public static final int HANDLER_SCHOOL_URL_NOT_FOUND = 23;
+    /**
+     * 弹出做题弹窗
+     */
+    public static final int HANDLER_EXAM_START =24;
+    /**
+     * 弹窗的正确答案
+     */
+    public static final int HANDLER_EXAM_CORRECT_ANSWER = 25;
+    /**
+     * 做题选择的选项
+     */
+    public static final int HANDLER_EXAM_DO = 26;
+    /**
+     * 关闭测试弹窗
+     */
+    public static final int HANDLER_EXAM_CLOSE = 27;
 }

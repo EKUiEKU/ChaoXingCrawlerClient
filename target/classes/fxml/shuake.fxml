@@ -7,13 +7,9 @@
 <?import com.jfoenix.controls.JFXTextArea?>
 <?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
-<?import javafx.scene.control.MenuItem?>
-<?import javafx.scene.control.SplitMenuButton?>
 <?import javafx.scene.layout.BorderPane?>
-<?import javafx.scene.layout.ColumnConstraints?>
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
-<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
@@ -34,7 +30,7 @@
             <Text text="课程名称:" />
             <JFXTextField fx:id="tf_course" text="" />
 
-            <JFXButton fx:id="btn_login" buttonType="RAISED" style="-fx-background-color: #eeeeee" text="开始刷课" />
+            <JFXButton fx:id="btn_login" buttonType="RAISED" style="-fx-background-color: #eeeeee;" text="开始刷课" />
         </HBox>
     </top>
 
@@ -79,6 +75,11 @@
 
                 <Text text="   进度:"/>
                 <Text fx:id="text_class_progress" fill="red" text="-/-(-%)"/>
+            </HBox>
+
+            <HBox spacing="5" style="-fx-label-padding: 5 5 5 5" GridPane.rowIndex="7" GridPane.columnIndex="0">
+                <JFXRadioButton fx:id="radio_smarttree" text="智慧树刷" style="-fx-padding: 5 5 5 5" selected="true"/>
+                <JFXRadioButton fx:id="radio_chaoxing" text="学习通"  style="-fx-padding: 5 5 5 5" selected="false"/>
             </HBox>
         </GridPane>
     </center>

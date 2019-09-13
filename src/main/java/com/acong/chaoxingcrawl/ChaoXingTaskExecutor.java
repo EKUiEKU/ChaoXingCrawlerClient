@@ -135,9 +135,6 @@ public class ChaoXingTaskExecutor extends ThreadPoolExecutor implements Handler.
             case TaskCode
                     .HANDLER_LOGIN_CHAOXING_SUCCESS:
                 callBack("消息队列:" + msg.arg1.getUsername() + " 登陆成功");
-                //保存Cookies
-                loginCookies.put(msg.arg1.toString(), (Set<Cookie>) msg.obj);
-                //String url = "https://mooc1-1.chaoxing.com/mycourse/studentstudy?chapterId=121176485&courseId=200534731&clazzid=6734325&enc=1cf247869b9ac4e00f1fa8b2d2256bba";
                 break;
             case TaskCode
                     .HANDLER_LOGIN_CHAOXING_FAILURE_UOP_ERROR:

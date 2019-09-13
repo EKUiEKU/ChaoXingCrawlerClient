@@ -6,31 +6,27 @@
     </artifacts-to-build>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="51cfeb21-41c2-4be6-8aee-f1f07bb62d3f" name="Default Changelist" comment="1.修复验证状态的bug&#10;2.将interfaces包由./src/移到./com.acong/chaoxingcrawl/interfaces/">
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/utils/net/ImageUtils.java" afterDir="false" />
+    <list default="true" id="51cfeb21-41c2-4be6-8aee-f1f07bb62d3f" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/taskes/SmartTreeTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/test/java/TSmartTreeTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/taskes/SmartTreeTask$Question.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/taskes/SmartTreeTask.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/ShuakeController$2.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/ShuakeController$TYPE.class" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/target/test-classes/TSmartTreeTask.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/ChaoXingCrwal.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/out/artifacts/ChaoXingCrawlerClient_jar/ChaoXingCrawlerClient.jar" beforeDir="false" afterPath="$PROJECT_DIR$/out/artifacts/ChaoXingCrawlerClient_jar/ChaoXingCrawlerClient.jar" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/taskes/WatchChaoXingTask.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/taskes/WatchChaoXingTask.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/utils/PropertiesUtil.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/utils/PropertiesUtil.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.properties" beforeDir="false" afterPath="$PROJECT_DIR$/config.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ChaoXingTaskExecutor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ChaoXingTaskExecutor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ui/controller/LoginController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ui/controller/LoginController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ui/controller/ShuakeController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/ui/controller/ShuakeController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/values/TaskCode.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/acong/chaoxingcrawl/values/TaskCode.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/fxml/shuake.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/fxml/shuake.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/META-INF/ChaoXingCrawlerClient.kotlin_module" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/chromedriver.exe" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ChaoXingTaskExecutor.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ChaoXingTaskExecutor.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/taskes/WatchChaoXingTask.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/taskes/WatchChaoXingTask.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/LoginController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/LoginController$1.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/LoginController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/LoginController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/LoginController$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/LoginController$2.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/ShuakeController$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/ShuakeController$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/ShuakeController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/ui/controller/ShuakeController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/PropertiesUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/PropertiesUtil.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/net/UserUtil$2.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/net/UserUtil$2.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/net/UserUtil$3.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/net/UserUtil$3.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/net/UserUtil.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/utils/net/UserUtil.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/values/TaskCode.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/acong/chaoxingcrawl/values/TaskCode.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/fxml/shuake.fxml" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/fxml/shuake.fxml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interfaces/OnLoginListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interfaces/OnMessageQueueListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interfaces/OnUploadInfoListener.class" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/interfaces/impl/MessageQueueListener.class" beforeDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -116,14 +112,14 @@
     <key name="CreateTestDialog.RecentsKey">
       <recent name="com.acong.chaoxingcrawl.utils" />
     </key>
-    <key name="CreateTestDialog.Recents.Supers">
-      <recent name="" />
-    </key>
     <key name="CopyClassDialog.RECENTS_KEY">
       <recent name="com.acong.chaoxingcrawl.ui.controller" />
       <recent name="com.acong.chaoxingcrawl.ui" />
       <recent name="com.acong.chaoxingcrawl.bean" />
       <recent name="com.acong.chaoxingcrawl.utils" />
+    </key>
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="F:\ChaoXingCrawlerClient\src\main\resources" />
@@ -158,33 +154,32 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="Test" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="java.Test" />
-      <module name="ChaoXingCrwal" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="java.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <method v="2">
-        <option name="Make" enabled="true" />
-      </method>
-    </configuration>
-    <configuration name="UserUtilTest (1)" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="TSmartTreeTask.Tdata" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="ChaoXingCrawlerClient" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserUtilTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="TSmartTreeTask" />
+      <option name="METHOD_NAME" value="Tdata" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="UserUtilTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="ChaoXingCrwal" />
+    <configuration name="TSmartTreeTask.login" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ChaoXingCrawlerClient" />
       <option name="PACKAGE_NAME" value="" />
-      <option name="MAIN_CLASS_NAME" value="UserUtilTest" />
-      <option name="TEST_OBJECT" value="class" />
+      <option name="MAIN_CLASS_NAME" value="TSmartTreeTask" />
+      <option name="METHOD_NAME" value="login" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="TSmartTreeTask.tJson" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="ChaoXingCrawlerClient" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="TSmartTreeTask" />
+      <option name="METHOD_NAME" value="tJson" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
@@ -201,23 +196,23 @@
     </configuration>
     <list>
       <item itemvalue="Application.Crawler" />
-      <item itemvalue="Application.Test" />
-      <item itemvalue="JUnit.UserUtilTest" />
       <item itemvalue="JUnit.UserUtilTest.login" />
-      <item itemvalue="JUnit.UserUtilTest (1)" />
+      <item itemvalue="JUnit.TSmartTreeTask.login" />
+      <item itemvalue="JUnit.TSmartTreeTask.tJson" />
+      <item itemvalue="JUnit.TSmartTreeTask.Tdata" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Application.Crawler" />
+        <item itemvalue="JUnit.TSmartTreeTask.login" />
+        <item itemvalue="JUnit.TSmartTreeTask.Tdata" />
+        <item itemvalue="JUnit.TSmartTreeTask.tJson" />
         <item itemvalue="JUnit.UserUtilTest.login" />
-        <item itemvalue="JUnit.UserUtilTest (1)" />
-        <item itemvalue="JUnit.UserUtilTest" />
-        <item itemvalue="Application.Test" />
       </list>
     </recent_temporary>
   </component>
   <component name="StructureViewFactory">
-    <option name="ACTIVE_ACTIONS" value=",SHOW_INTERFACES,SHOW_PROPERTIES" />
+    <option name="ACTIVE_ACTIONS" value=",SHOW_INTERFACES,SHOW_PROPERTIES,SHOW_ANONYMOUS,SHOW_LAMBDA" />
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -295,6 +290,17 @@
       <workItem from="1567510512530" duration="5910000" />
       <workItem from="1567524057470" duration="1732000" />
       <workItem from="1567525984428" duration="56000" />
+      <workItem from="1567611618222" duration="855000" />
+      <workItem from="1567682534950" duration="10000" />
+      <workItem from="1568095711757" duration="7541000" />
+      <workItem from="1568134039897" duration="1458000" />
+      <workItem from="1568167363046" duration="2268000" />
+      <workItem from="1568172189550" duration="937000" />
+      <workItem from="1568182740071" duration="5004000" />
+      <workItem from="1568209061136" duration="8385000" />
+      <workItem from="1568254265436" duration="874000" />
+      <workItem from="1568264479112" duration="32189000" />
+      <workItem from="1568345278646" duration="12172000" />
     </task>
     <task id="LOCAL-00001" summary="超星学习通爬虫刷课客户端">
       <created>1565282947002</created>
@@ -338,17 +344,15 @@
       <option name="project" value="LOCAL" />
       <updated>1566196262956</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="1.修复win10无法获取验证码的BUG.&#10;2.修复win10无法缓存配置文件的BUG.">
+      <created>1567611717373</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1567611717373</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
-  </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="1" />
@@ -386,6 +390,7 @@
     <MESSAGE value="优化了一些细节" />
     <MESSAGE value="1.修复了获取课程表不完整的BUG&#10;2.增加了本节课任务后更新云端信息的操作" />
     <MESSAGE value="1.修复验证状态的bug&#10;2.将interfaces包由./src/移到./com.acong/chaoxingcrawl/interfaces/" />
-    <option name="LAST_COMMIT_MESSAGE" value="1.修复验证状态的bug&#10;2.将interfaces包由./src/移到./com.acong/chaoxingcrawl/interfaces/" />
+    <MESSAGE value="1.修复win10无法获取验证码的BUG.&#10;2.修复win10无法缓存配置文件的BUG." />
+    <option name="LAST_COMMIT_MESSAGE" value="1.修复win10无法获取验证码的BUG.&#10;2.修复win10无法缓存配置文件的BUG." />
   </component>
 </project>
